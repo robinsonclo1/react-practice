@@ -30,5 +30,15 @@ const Button = styled.button`
   }
 `;
 
+const List = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+`;
 
-export {Container, Title, Button}; 
+const ListItem = styled.li`
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+`;
+
+
+export {Container, Title, Button, List, ListItem}; 

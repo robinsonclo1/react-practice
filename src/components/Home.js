@@ -1,21 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Container, Title } from '../styles/SharedStyles'
+import { Container, Title, List, ListItem } from '../styles/SharedStyles'
 
 const Description = styled.p`
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
-`;
-
-const List = styled.ul`
-  list-style-type: none;
-  padding-left: 0;
-`;
-
-const ListItem = styled.li`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
 `;
 
 const HomePage = () => {
@@ -30,6 +20,7 @@ const HomePage = () => {
         <ListItem><Link to="/useContext">useContext</Link> - Explore context API and its magic!</ListItem>
         <ListItem><Link to="/useReducer">useReducer</Link> - Handle complex state logic in components.</ListItem>
         <ListItem><Link to="/portals">Portals</Link> - Break out of the usual DOM hierarchy.</ListItem>
+        <ListItem><Link to="/montyHall">Monty Hall</Link> - But wait, there's more! Using Debouncing for a Monty Hall Problem.</ListItem>
       </List>
     </Container>
   );

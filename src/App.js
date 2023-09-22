@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { HomePage, PortalsPage } from './components';
+import { MontyHall, Home, Portals, APISearch } from './components';
 
 function App() {
   return (
@@ -10,11 +10,12 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          {/* <Route path="/useEffect" element={<UseEffectPage />} />
-          <Route path="/useContext" element={<UseContextPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/useEffect" element={<APISearch />} />
+          {/* <Route path="/useContext" element={<UseContextPage />} />
           <Route path="/useReducer" element={<UseReducerPage />} /> */}
-          <Route path="/portals" element={<PortalsPage />} />
+          <Route path="/portals" element={<Portals />} />
+          <Route path="/montyHall" element={<MontyHall />} />
         </Routes>      
       </div>
     </Router>
