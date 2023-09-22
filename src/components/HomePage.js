@@ -1,18 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-const Container = styled.div`
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-`;
+import { Container, Title } from '../styles/SharedStyles'
 
 const Description = styled.p`
   font-size: 1.2rem;

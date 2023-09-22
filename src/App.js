@@ -7,7 +7,6 @@ function App() {
       <div>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/portals">Portals</Link>
         </nav>
 
         <Routes>
