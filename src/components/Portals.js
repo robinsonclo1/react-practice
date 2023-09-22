@@ -10,12 +10,33 @@ const ModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 80%;
   max-width: 400px;
-  background-color: white;
+  background-color: rgba(0,0,0,0.85);
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 50%;
+  border: 2px solid #00f;
+  box-shadow: 0 0 20px #00f;
   z-index: 1000;
+  color: #fff;
+  text-align: center;
 `;
+
+const PortalButton = styled.button`
+  background-color: #000;
+  border: 2px solid red;
+  box-shadow: 0 0 20px red;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0,0,0,0.85);
+  }
+`;
+
 
 const Modal = ({ children, isModalOpen }) => {
   if (!isModalOpen) return null;
@@ -69,12 +90,11 @@ function Portals() {
   return (
     <Container>
       <Title>This was a triumph</Title>
-      <Button ref={openButtonRef} onClick={() => setModalOpen(true)}>Open Modal</Button>
+      <PortalButton ref={openButtonRef} onClick={() => setModalOpen(true)}>Open Modal</PortalButton>
 
       <ExtraComponent isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
     </Container>
   )
 }
-
 
 export default Portals;
