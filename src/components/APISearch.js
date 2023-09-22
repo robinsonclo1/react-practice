@@ -45,50 +45,61 @@ const Description = styled.div`
     color: #24292e;
 `;
 
-
 function APISearch() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [debounceTimeoutId, setDebounceTimeoutId] = useState(null);
-
-  const fetchResults = async (query) => {
-    const response = await axios.get(`https://api.github.com/search/repositories?q=${query}&sort=stars&order=desc`);
-    setResults(response.data.items);
-  };
-
-  useEffect(() => {
-    clearTimeout(debounceTimeoutId);
-    if (query) {
-      setDebounceTimeoutId(setTimeout(() => fetchResults(query), 300));
-    } else {
-      setResults([]);
-    }
-  }, [query, debounceTimeoutId]);
-
-  return (
-    <Container>
-      <Title>API Search with Debouncing</Title>
-      <SearchBar 
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search..."
-      />
-      <List>
-        {results.map((result, index) => (
-            <Card key={index}>
-                <RepoLink href={result.html_url} target="_blank" rel="noopener noreferrer">
-                    {result.name}
-                </RepoLink>
-                <RepoInfo>
-                    <Author>By: {result.owner.login}</Author>
-                    <Description>{result.description}</Description>
-                </RepoInfo>
-            </Card>
-        ))}
-      </List>
-    </Container>
-  );
+    const [query, setQuery] = useState('');
+    const [results, setResults] = useState([]);
+    const [debounceTimeoutId, setDebounceTimeoutId] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+  
+    const fetchResults = async (query) => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await axios.get(`https://api.github.com/search/repositories?q=${query}&sort=stars&order=desc`);
+        setResults(response.data.items);
+      } catch (err) {
+        setError(err.toString());
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    useEffect(() => {
+      clearTimeout(debounceTimeoutId);
+      if (query) {
+        setDebounceTimeoutId(setTimeout(() => fetchResults(query), 300));
+      } else {
+        setResults([]);
+      }
+    }, [query, debounceTimeoutId]);
+  
+    return (
+      <Container>
+        <Title>API Search with Debouncing</Title>
+        <SearchBar 
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search..."
+        />
+        {loading && <div>Loading...</div>}
+        {error && <div>Error: {error}</div>}
+        <List>
+          {results.map((result, index) => (
+              <Card key={index}>
+                  <RepoLink href={result.html_url} target="_blank" rel="noopener noreferrer">
+                      {result.name}
+                  </RepoLink>
+                  <RepoInfo>
+                      <Author>By: {result.owner.login}</Author>
+                      <Description>{result.description}</Description>
+                  </RepoInfo>
+              </Card>
+          ))}
+        </List>
+      </Container>
+    );
 }
-
+  
 export default APISearch;
