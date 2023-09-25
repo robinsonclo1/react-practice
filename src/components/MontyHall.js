@@ -92,4 +92,5 @@ function MontyHall() {
   );
 
 }
+
 export default withCodeAccordion(MontyHall, 'src/components/MontyHall.js');
