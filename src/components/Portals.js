@@ -2,6 +2,7 @@ import React, {useState,  useEffect, useRef} from 'react';
 import ReactDOM  from 'react-dom';
 import styled from 'styled-components';
 import { Container, Title, Button } from '../styles/SharedStyles'
+import withCodeAccordion from './withCodeAccordion';
 
 const ModalWrapper = styled.div`
   position: fixed;
@@ -36,7 +37,6 @@ const PortalButton = styled.button`
     background-color: rgba(0,0,0,0.85);
   }
 `;
-
 
 const Modal = ({ children, isModalOpen }) => {
   if (!isModalOpen) return null;
@@ -97,4 +97,4 @@ function Portals() {
   )
 }
 
-export default Portals;
+export default withCodeAccordion(Portals, 'src/components/Portals.js');

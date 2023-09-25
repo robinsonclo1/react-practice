@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useDebounce from '../utils/Debounce.js'
 import styled from 'styled-components';
+import withCodeAccordion from './withCodeAccordion';
 
 const PageContainer = styled.div`
     max-width: 800px;
@@ -91,5 +92,4 @@ function MontyHall() {
   );
 
 }
-
-export default MontyHall;
+export default withCodeAccordion(MontyHall, 'src/components/MontyHall.js');

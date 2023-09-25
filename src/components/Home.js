@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Container, Title, List, ListItem } from '../styles/SharedStyles'
+import { Container, Title, List, ListItem } from '../styles/SharedStyles';
+import withCodeAccordion from './withCodeAccordion';
 
 const Description = styled.p`
   font-size: 1.2rem;
@@ -26,4 +27,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default withCodeAccordion(HomePage, 'src/components/Home.js');

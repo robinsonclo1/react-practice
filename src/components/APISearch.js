@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Container, Title, List } from '../styles/SharedStyles'
 import axios from 'axios';
+import withCodeAccordion from './withCodeAccordion';
 
 const SearchBar = styled.input`
     width: 60%;
@@ -102,4 +103,4 @@ function APISearch() {
     );
 }
   
-export default APISearch;
+export default withCodeAccordion(APISearch, 'src/components/APISearch.js');

@@ -1,13 +1,26 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { MontyHall, Home, Portals, APISearch } from './components';
+import { ReactAtom, MontyHall, Home, Portals, APISearch } from './components';
+import styled from 'styled-components';
+
+const NavWrapper = styled.div`
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
+        <NavWrapper>
+          <nav>
+            <Link to="/"><ReactAtom /></Link>
+          </nav>
+        </NavWrapper>
 
         <Routes>
           <Route path="/" element={<Home />} />
