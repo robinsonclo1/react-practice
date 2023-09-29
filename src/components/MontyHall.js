@@ -76,7 +76,7 @@ function MontyHall() {
   return (
       <PageContainer>
           <h1>The Debouncing Monty Hall</h1>
-          <p>Pick a door, then confirm your choice within 3 seconds, or pick another door!</p>
+          <p>Pick a door, then wait 3 seconds to confirm, or pick another door!</p>
           <Door onClick={() => selectDoor(1)}>{getDoorLabel(1)}</Door>
           <Door onClick={() => selectDoor(2)}>{getDoorLabel(2)}</Door>
           <Door onClick={() => selectDoor(3)}>{getDoorLabel(3)}</Door>

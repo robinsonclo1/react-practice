@@ -1,6 +1,14 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { ReactAtom, MontyHall, Home, Portals, APISearch } from './components';
+import { ReactAtom, MontyHall, Home, Portals, APISearch, Toggle } from './components';
 import styled from 'styled-components';
+import { useContext } from 'react';
+import { ThemeContext } from './utils/ThemeContext';
+
+const ThemeWrapper = styled.div`
+  background-color: ${props => (props.$darkMode ? '#333' : '#FFF')};
+  color: ${props => (props.$darkMode ? '#FFF' : '#000')};
+  height: 100vh;
+`;
 
 const NavWrapper = styled.div`
   padding: 1rem;
@@ -13,12 +21,15 @@ const NavWrapper = styled.div`
 `;
 
 function App() {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <Router>
-      <div>
+      <ThemeWrapper $darkMode={darkMode}>
         <NavWrapper>
           <nav>
             <Link to="/"><ReactAtom /></Link>
+            <Toggle />
           </nav>
         </NavWrapper>
 
@@ -30,7 +41,7 @@ function App() {
           <Route path="/portals" element={<Portals />} />
           <Route path="/montyHall" element={<MontyHall />} />
         </Routes>      
-      </div>
+      </ThemeWrapper>
     </Router>
   );
 }
