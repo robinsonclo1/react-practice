@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/react-practice/static/css/main.00a7023c.css",
     "main.js": "/react-practice/static/js/main.6eb9d9dc.js",
     "static/js/787.7bccd639.chunk.js": "/react-practice/static/js/787.7bccd639.chunk.js",
@@ -13,5 +14,20 @@
   "entrypoints": [
     "static/css/main.00a7023c.css",
     "static/js/main.6eb9d9dc.js"
+=======
+    "main.css": "/home/static/css/main.00a7023c.css",
+    "main.js": "/home/static/js/main.08475b26.js",
+    "static/js/787.7bccd639.chunk.js": "/home/static/js/787.7bccd639.chunk.js",
+    "index.html": "/home/index.html",
+    "static/media/sun.svg": "/home/static/media/sun.75ad86a59ac3f9e2f8a8b4a1a28e8a7a.svg",
+    "static/media/moon.svg": "/home/static/media/moon.ce6e3d3633eff2eb7f0385f43e1c502b.svg",
+    "main.00a7023c.css.map": "/home/static/css/main.00a7023c.css.map",
+    "main.08475b26.js.map": "/home/static/js/main.08475b26.js.map",
+    "787.7bccd639.chunk.js.map": "/home/static/js/787.7bccd639.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00a7023c.css",
+    "static/js/main.08475b26.js"
+>>>>>>> 700593df181c09879b4de78af6c04a132af7b634
   ]
 }
