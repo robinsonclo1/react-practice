@@ -28,13 +28,13 @@ function App() {
       <ThemeWrapper $darkMode={darkMode}>
         <NavWrapper>
           <nav>
-            <Link to="/"><ReactAtom /></Link>
+            <Link to="/home"><ReactAtom /></Link>
             <Toggle />
           </nav>
         </NavWrapper>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/apisearch" element={<APISearch />} />
           {/* <Route path="/useContext" element={<UseContextPage />} />
           <Route path="/useReducer" element={<UseReducerPage />} /> */}
