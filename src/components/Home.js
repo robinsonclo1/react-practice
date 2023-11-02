@@ -22,6 +22,7 @@ const HomePage = () => {
         <ListItem><Link to="/useReducer">useReducer</Link> - Handle complex state logic in components.</ListItem>
         <ListItem><Link to="/portals">Portals</Link> - Break out of the usual DOM hierarchy.</ListItem>
         <ListItem><Link to="/montyHall">Monty Hall</Link> - But wait, there's more! Using Debouncing for a Monty Hall Problem.</ListItem>
+        <ListItem><Link to="/interview">React Interview</Link> - A blankish page ready for an interview question.</ListItem>
       </List>
     </Container>
   );

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { ReactAtom, MontyHall, Home, Portals, APISearch, Toggle } from './components';
+import { ReactAtom, MontyHall, Home, Portals, APISearch, Toggle, Interview } from './components';
 import styled from 'styled-components';
 import { useContext } from 'react';
 import { ThemeContext } from './utils/ThemeContext';
@@ -40,6 +40,7 @@ function App() {
           <Route path="/useReducer" element={<UseReducerPage />} /> */}
           <Route path="/portals" element={<Portals />} />
           <Route path="/montyHall" element={<MontyHall />} />
+          <Route path="/interview" element={<Interview />} />
         </Routes>      
       </ThemeWrapper>
     </Router>

@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { Container, Title, List } from '../styles/SharedStyles'
 import axios from 'axios';
 import withCodeAccordion from './withCodeAccordion';
-import { useContext } from 'react';
-import { ThemeContext } from '../utils/ThemeContext';
 
 
 const SearchBar = styled.input`
@@ -55,7 +53,6 @@ function APISearch() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const debounceTimeoutIdRef = useRef(null);
-    const { darkMode } = useContext(ThemeContext);
 
     const fetchResults = async (query) => {
         setLoading(true);
@@ -85,7 +82,7 @@ function APISearch() {
     }, [query]);
   
     return (
-        <Container darkMode={darkMode}>
+        <Container>
             <Title>API Search with Debouncing</Title>
             <SearchBar 
                 type="text"
