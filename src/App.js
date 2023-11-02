@@ -36,8 +36,6 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/apisearch" element={<APISearch />} />
-          {/* <Route path="/useContext" element={<UseContextPage />} />
-          <Route path="/useReducer" element={<UseReducerPage />} /> */}
           <Route path="/portals" element={<Portals />} />
           <Route path="/montyHall" element={<MontyHall />} />
           <Route path="/interview" element={<Interview />} />
