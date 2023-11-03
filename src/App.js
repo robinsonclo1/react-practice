@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { ReactAtom, MontyHall, Home, Portals, APISearch, Toggle, Interview } from './components';
 import styled from 'styled-components';
 import { useContext } from 'react';
